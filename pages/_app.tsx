@@ -22,9 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     document.body.style.background =
-      mode === "light"
-        ? "white"
-        : "linear-gradient(to top, #0f2027, #203a43, #2c5364)";
+      mode === "light" ? "white" : "rgb(32, 58, 67)";
   }, [mode]);
 
   const colorMode = useMemo(

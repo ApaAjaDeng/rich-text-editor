@@ -19,15 +19,14 @@ import Leaf from "../helper/renderLeaf";
 import DialogAndPopNotif from "./DialogAndPopNotif";
 
 type CustomElement = {
-  type: "heading-one" | "heading-two" | "paragraph" | "bullet-list";
+  type: "heading-one" | "heading-two" | "paragraph" | "bullet-list" | "code";
   children: CustomText[];
-  code: boolean;
 };
 type CustomText = {
   text: string;
   bold: boolean;
   italic: boolean;
-  undeline: boolean;
+  underline: boolean;
   paragraph: boolean;
 };
 

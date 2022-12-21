@@ -3,7 +3,7 @@ import { Editor, Text, Transforms } from "slate";
 export const CustomEditor = {
   isBoldMarkActive(editor: any) {
     const [match]: any = Editor.nodes(editor, {
-      match: (n: { bold: boolean }) => n.bold === true,
+      match: (n: any) => n.bold === true,
       universal: true,
     });
 
@@ -12,7 +12,7 @@ export const CustomEditor = {
 
   isItalicMarkActive(editor: any) {
     const [match]: any = Editor.nodes(editor, {
-      match: (n) => n.italic === true,
+      match: (n: any) => n.italic === true,
       universal: true,
     });
 
@@ -20,8 +20,8 @@ export const CustomEditor = {
   },
 
   isUnderlineMarkActive(editor: any) {
-    const [match] = Editor.nodes(editor, {
-      match: (n) => n.underline === true,
+    const [match]: any = Editor.nodes(editor, {
+      match: (n: any) => n.underline === true,
       universal: true,
     });
 
@@ -29,48 +29,48 @@ export const CustomEditor = {
   },
 
   isHeadingOneMarkActive(editor: any) {
-    const [match] = Editor.nodes(editor, {
-      match: (n) => n.type === "heading-one",
+    const [match]: any = Editor.nodes(editor, {
+      match: (n: any) => n.type === "heading-one",
     });
 
     return !!match;
   },
 
   isParagraphMarkActive(editor: any) {
-    const [match] = Editor.nodes(editor, {
-      match: (n) => n.type === "paragraph",
+    const [match]: any = Editor.nodes(editor, {
+      match: (n: any) => n.type === "paragraph",
     });
 
     return !!match;
   },
 
   isHeadingTwoMarkActive(editor: any) {
-    const [match] = Editor.nodes(editor, {
-      match: (n) => n.type === "heading-two",
+    const [match]: any = Editor.nodes(editor, {
+      match: (n: any) => n.type === "heading-two",
     });
 
     return !!match;
   },
 
   isCodeBlockActive(editor: any) {
-    const [match] = Editor.nodes(editor, {
-      match: (n) => n.type === "code",
+    const [match]: any = Editor.nodes(editor, {
+      match: (n: any) => n.type === "code",
     });
 
     return !!match;
   },
 
   isBulletListBlockActive(editor: any) {
-    const [match] = Editor.nodes(editor, {
-      match: (n) => n.type === "bullet-list",
+    const [match]: any = Editor.nodes(editor, {
+      match: (n: any) => n.type === "bullet-list",
     });
 
     return !!match;
   },
 
   isNumberListBlockActive(editor: any) {
-    const [match] = Editor.nodes(editor, {
-      match: (n) => n.type === "number-list",
+    const [match]: any = Editor.nodes(editor, {
+      match: (n: any) => n.type === "number-list",
     });
 
     return !!match;
@@ -144,15 +144,6 @@ export const CustomEditor = {
     Transforms.setNodes(
       editor,
       { type: isActive ? null : "bullet-list" },
-      { match: (n) => Editor.isBlock(editor, n) }
-    );
-  },
-
-  toggleNumberListBlock(editor: any) {
-    const isActive = CustomEditor.isNumberListBlockActive(editor);
-    Transforms.setNodes(
-      editor,
-      { type: isActive ? null : "number-list" },
       { match: (n) => Editor.isBlock(editor, n) }
     );
   },
