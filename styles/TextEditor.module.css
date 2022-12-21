@@ -1,0 +1,17 @@
+.mainContainer {
+  padding: 0 12px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cssEditable {
+  padding: 0 20px 200px 20px;
+  border: 2px white solid;
+  border-radius: 20px;
+}
